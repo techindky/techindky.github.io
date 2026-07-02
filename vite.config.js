@@ -1,13 +1,14 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
+  base: '/techindky.github.io',
+
   server: {
     port: 3000,
     fs: {
       deny: ['.git', 'node_modules']
     }
-  },
+  }
 });
