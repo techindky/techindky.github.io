@@ -1,0 +1,210 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter/Inter-VariableFont_opsz,wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter/Inter-Italic-VariableFont_opsz,wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('/fonts/JetBrains_Mono/JetBrainsMono-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('/fonts/JetBrains_Mono/JetBrainsMono-Italic-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+body, html {
+  color: hsl(222, 14%, 15%);
+}
+
+.json-tree {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.json-key {
+  color: hsl(210, 90%, 56%);
+}
+
+.json-string {
+  color: hsl(145, 63%, 42%);
+}
+
+.json-number {
+  color: hsl(38, 92%, 50%);
+}
+
+.json-boolean {
+  color: hsl(190, 70%, 48%);
+}
+
+.json-null {
+  color: hsl(218, 11%, 65%);
+}
+
+.json-undefined {
+  color: hsl(218, 11%, 65%);
+  font-style: italic;
+}
+
+.json-tree {
+  line-height: 1.5;
+}
+
+.json-tree pre {
+  margin: 0;
+  font-family: inherit;
+}
+
+/* Toast Animations */
+@keyframes slideInUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutDown {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+
+@keyframes progress {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+
+.toast-enter {
+  animation: slideInUp 0.3s ease-out forwards;
+}
+
+.toast-exit {
+  animation: slideOutDown 0.3s ease-in forwards;
+}
+
+.toast-progress {
+  animation: progress var(--duration) linear forwards;
+}
+
+.toast-container {
+  pointer-events: none;
+}
+
+.toast-container .toast {
+  pointer-events: auto;
+}
+
+.collection-item .folder-cover {
+  fill: #fff;
+}
+.collection-item.active .folder-cover {
+  fill: #26d465;
+}
+.collection-item.active {
+  background-color: #26d4654a;
+}
+.json-beautify {
+  cursor: pointer;
+  stroke: #111b21;
+}
+.json-beautify.active {
+  stroke: #07a440;
+}
+.json-beautify.disabled {
+  stroke: #d1d5db;
+  cursor: not-allowed;
+}
+
+/** To override default css without marking all field as !important **/
+button {
+  background: #26d465;
+  font-family: inherit;
+  padding: 0.3em 0.8em;
+  font-weight: 500;
+  font-size: 16px;
+  border-radius: 0.4em;
+  border: 1px solid #111b21;
+  box-shadow: 0.1em 0.1em #111b21;
+  cursor: pointer;
+  color: #111b21;
+}
+
+#reset-filters {
+  background-color: white;
+  color: grey;
+}
+
+/* Segmented Toggle / Tab Buttons */
+.view-toggle {
+  background: transparent !important;
+  color: hsl(220, 9%, 46%) !important;
+  border: none !important;
+  box-shadow: none !important;
+  cursor: pointer;
+  transform: none !important;
+  transition: all 0.15s ease-in-out;
+}
+
+.view-toggle:hover:not(.active) {
+  color: #111b21 !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.view-toggle.active {
+  color: #111b21 !important;
+  font-weight: 600 !important;
+}
+
+.view-toggle:active {
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+button:hover {
+  transform: translate(-0.05em, -0.05em);
+  box-shadow: 0.15em 0.15em;
+}
+
+button:active {
+  transform: translate(0.05em, 0.05em); /* Corrected 'form' typo to 'transform' */
+  box-shadow: 0.05em 0.05em;
+}
+
+.bg-error {
+  background-color: hsl(0, 84%, 60%) !important;
+}
+.border-error {
+  border-color: hsl(0, 84%, 60%) !important;
+}
